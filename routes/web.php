@@ -2,12 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-
-    Route::get("/",function(){
+    Route::get("/login",function(){
         return view('auth.login');
     })->name("login"); 
 
@@ -24,8 +20,8 @@ use Illuminate\Support\Facades\Route;
         return;
     });
 
-    Route::get("/profile",function(){
-        return view("user.profile");
+    Route::get("/",function(){
+        return view("welcome");
     });
 
     Route::post("/profile",function(){
