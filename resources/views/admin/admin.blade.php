@@ -19,16 +19,23 @@
         </div>
     </div>
 
-    <table>
+    <table class="table text-center table-striped table-hover my-4">
         <thead>
-
+            @include("componen.table.admin.tableAdmin")
         </thead>
+        <tbody>
+            @foreach ( $data as $item )
+                 <tr>
+                 <td>{{ $item->nomor_induk_mahasiswa }}5</td>
+                 <td>{{ $item->nama_lengkap }}</td>
+                 <td>{{ $item->tempat_tanggal_lahir }}</td>
+                 <td>{{ $item->domisili }}</td>
+                 <td>{{ $item->jurusan }}</td>
+                 <td class="btn bg-success p-1 text-light">Detail</td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>        
     @endauth
-
-    @guest
-        <h1>401 Unauthorized!</h1>
-        <p>Kami Tidak Mengenali Anda</p>
-    @endguest
 </body>
 </html>

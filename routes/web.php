@@ -11,9 +11,9 @@ Route::post("/logout",[AuthController::class,"logout"])->name("logout");
 
 
 // NOTE : Nama dari route harus bersifat unique
-Route::get("/admin/dashboard",function(){
-    return view("admin.admin");
-})->name('admin.dashboard')->middleware('auth');
+Route::middleware(['auth'])->group(function(){
+Route::get("/admin/dashboard",[MahasiswaController::class,'runForAdmin'])->name('admin.dashboard');
+});
 
 
 Route::post("/admin/dashboard",function(){

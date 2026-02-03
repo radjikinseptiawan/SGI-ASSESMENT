@@ -14,4 +14,12 @@ class MahasiswaController extends Controller
             'data' => $fetchData
         ]);        
     }
+
+    public function runForAdmin(){
+        $fetchData = Mahasiswa::all();
+
+        return view("admin.admin",[
+            'data' => $fetchData
+        ]);
+    }
 }
