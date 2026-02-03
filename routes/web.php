@@ -1,29 +1,28 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 
 
-    Route::get("/login",function(){
-        return view('auth.login');
-    })->name("login"); 
-
-    Route::get("/register",function(){
-        return view("auth.register");
-    })->name("register");
+Route::get("/login",[AuthController::class,'render'])->name('login'); 
+Route::post("/login",[AuthController::class,"login"])->name("send.login.form");
+Route::post("/logout",[AuthController::class,"logout"])->name("logout");
 
 
-   Route::get("/admin/dashboard",function(){
-        return view("admin.admin");
-    });
+// NOTE : Nama dari route harus bersifat unique
+Route::get("/admin/dashboard",function(){
+    return view("admin.admin");
+})->name('admin.dashboard')->middleware('auth');
 
-    Route::post("/admin/dashboard",function(){
-        return;
-    });
 
-    Route::get("/",function(){
-        return view("welcome");
-    });
+Route::post("/admin/dashboard",function(){
+    return;
+})->name("admin");
 
-    Route::post("/profile",function(){
-        return;
-    });
+
+Route::get("/",[MahasiswaController::class,"run"]);
+
+Route::post("/profile",function(){
+    return;
+});

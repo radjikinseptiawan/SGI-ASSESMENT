@@ -9,8 +9,10 @@
 </head>
 <body>
 
+    @guest
     <div class="d-flex align-self-center align-items-center vh-100" style=" width:100%;">
         @include("componen.auth.loginCards")
     </div>
+    @endguest
 </body>
 </html>

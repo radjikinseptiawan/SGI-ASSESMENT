@@ -11,16 +11,33 @@
 
     @include("componen.navbar")
     
-    <div class=" d-flex justify-content-center align-items-center vh-100">
-    <div class="card" style="width: 28rem;">
-         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+
+    <div class=" d-flex flex-column justify-content-center align-items-center vh-100">
+        <div class="input-group mb-3" style="width:32rem;">
+             <button class="btn btn-outline-success" type="button" id="button-addon1">Cari</button>
+            <input type="text" class="form-control border-2 text-success" 
+            placeholder="Cari data mahasiswa" 
+            aria-label="Example text with button addon" aria-describedby="button-addon1">
         </div>
-        </div>
+
+        <table class="table table-striped table-hover my-4">
+            <thead>
+                @include("componen.table.user.table")
+            </thead>
+            <tbody class="text-center">
+                @foreach($data as $item)
+                <tr>
+                 <td>{{ $item->nomor_induk_mahasiswa }}5</td>
+                 <td>{{ $item->nama_lengkap }}</td>
+                 <td>{{ $item->tempat_tanggal_lahir }}</td>
+                 <td>{{ $item->domisili }}</td>
+                 <td>{{ $item->jurusan }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        
+       
+        </table>
     </div>
 
 </body>
