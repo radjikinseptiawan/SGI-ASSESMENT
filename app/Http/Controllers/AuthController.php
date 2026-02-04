@@ -14,13 +14,13 @@ class AuthController extends Controller
 
     public function login(Request $request){
     try{
-    // Memvalidasi akun apakah aman diolah oleh server atau berbahaya
+    // Memvalidasi input
         $credentials = $request->validate([
             'name' => "required|string|max:255",
             'password' => "required|string|max:255"
         ]);
 
-        //Melakukan percobaan untuk login ke admin 
+        //Melakukan proses untuk login 
         if(Auth::attempt($credentials)){
             // Membuat session
             $request->session()->regenerate();
