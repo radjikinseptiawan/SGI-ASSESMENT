@@ -109,20 +109,4 @@ class MahasiswaController extends Controller
         }
     }
 
-
-    public function findPeople(Request $req){
-        try{
-        $validasi = $req->validate([
-            'cari' => 'string|max:255|required'
-        ]);
-
-        $rawData = Mahasiswa::where('nama_lengkap',$validasi['cari'])->first();
-
-        return view("admin.detail",[
-            'data' => $rawData
-        ]);
-    }catch(\Exception $e){
-        dd($e->getMessage());
-    }
-    }
 }
