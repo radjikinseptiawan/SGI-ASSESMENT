@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <title>Dashboard</title>
     @vite(['resources/js/app.js','resources/css/app.css'])
 </head>
 <body>
@@ -13,13 +13,16 @@
     
 
     <div class=" d-flex flex-column justify-content-center align-items-center vh-100">
-        <div class="input-group mb-3" style="width:32rem;">
-             <button class="btn btn-outline-success" type="button" id="button-addon1">Cari</button>
-            <input type="text" class="form-control border-2 text-success" 
-            placeholder="Cari data mahasiswa" 
+        <form action="{{ route('find.people') }}" method="POST">
+            @csrf
+        <div class="input-group mb-3" style="width:32rem;">   
+            <button class="btn btn-outline-success" type="submit" id="button-addon1">Cari</button>
+            <input name="cari" type="text" class="form-control border-2 text-success" 
+            placeholder="Cari Nama Mahasiswa" 
             aria-label="Example text with button addon" aria-describedby="button-addon1">
         </div>
-
+        </form> 
+            
         <table class="table table-striped table-hover my-4">
             <thead>
                 @include("componen.table.user.table")
@@ -34,9 +37,7 @@
                  <td>{{ $item->jurusan }}</td>
                 </tr>
                 @endforeach
-            </tbody>
-        
-       
+            </tbody> 
         </table>
     </div>
 

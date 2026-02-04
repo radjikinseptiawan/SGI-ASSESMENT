@@ -15,7 +15,7 @@
         <p>Selamat Datang Kembali</p>
         
         <div class="d-flex justify-content-end">
-            <button class="btn bg-success text-light">Tambah Data</button>
+            <button class="btn bg-success text-light" onclick="window.location.href = '/admin/dashboard/tambah'">Tambah Data</button>
         </div>
     </div>
 
@@ -31,7 +31,7 @@
                  <td>{{ $item->tempat_tanggal_lahir }}</td>
                  <td>{{ $item->domisili }}</td>
                  <td>{{ $item->jurusan }}</td>
-                 <td class="btn bg-success p-1 text-light">Detail</td>
+                 <td class="btn bg-success p-1 text-light" onclick="window.location.href = '/admin/dashboard/detail/{{$item->nomor_induk_mahasiswa}}'">Detail</td>
                 </tr>
             @endforeach
         </tbody>

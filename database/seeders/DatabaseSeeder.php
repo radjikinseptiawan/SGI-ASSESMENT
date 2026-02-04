@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         Mahasiswa::create([
             'nomor_induk_mahasiswa' => '2023012345',
             'nama_lengkap'=>'Radjikin Septiawan',
-            'tempat_tanggal_lahir' => 'Jakarta, 12 Agustus 2003',
+            'tempat_tanggal_lahir' => 'Jakarta, 2003-08-12',
             'domisili' => 'Jl. Kebon Jeruk Raya No. 15, Jakarta Barat',
             'jurusan' => 'Teknik Informatika'
         ]);
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
         Mahasiswa::create([
             'nomor_induk_mahasiswa' => '2023012346',
             'nama_lengkap'=>'Ahmad Fauzan',
-            'tempat_tanggal_lahir' => 'Bekasi, 3 Maret 2004',
+            'tempat_tanggal_lahir' => 'Bekasi, 2004-03-03',
             'domisili' => 'Jl. Sultan Agung No. 22, Bekasi Timur',
             'jurusan' => 'Sistem Informasi'
         ]);
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
         Mahasiswa::create([
             'nomor_induk_mahasiswa' => '2023012347',
             'nama_lengkap'=>'Siti Aisyah',
-            'tempat_tanggal_lahir' => 'Depok, 25 Mei 2003',
+            'tempat_tanggal_lahir' => 'Depok, 2003-05-25',
             'domisili' => 'Jl. Margonda Raya No. 101, Depok',
             'jurusan' => 'Teknik Komputer'
         ]);

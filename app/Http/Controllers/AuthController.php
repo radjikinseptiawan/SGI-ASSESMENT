@@ -20,8 +20,9 @@ class AuthController extends Controller
             'password' => "required|string|max:255"
         ]);
 
-
+        //Melakukan percobaan untuk login ke admin 
         if(Auth::attempt($credentials)){
+            // Membuat session
             $request->session()->regenerate();
 
             return redirect()->intended('/admin/dashboard');
@@ -39,8 +40,10 @@ class AuthController extends Controller
         try{
             Auth::logout();
 
+            // Menonaktifkan session awal
             $request->session()->invalidate();
 
+            // Membuat session token baru
             $request->session()->regenerateToken();
             return redirect("/login");
         }catch(\Exception $e){
