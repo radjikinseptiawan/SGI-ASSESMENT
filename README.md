@@ -36,7 +36,7 @@ Project ini dibuat untuk memenuhi requirement technical test dengan fokus pada a
 
 ### 1. Authentication
 - Register
-- Login (menggunakan email / username dan password)
+- Login (menggunakan username dan password)
 - Logout
 
 ### 2. User Role Management
